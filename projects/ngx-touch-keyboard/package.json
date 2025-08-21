@@ -21,15 +21,15 @@
   ],
   "author": {
     "name": "Ivailo Fortunov",
-    "url": "https://github.com/ivofortunov"
+    "url": "https://github.com/datexnpm"
   },
-  "homepage": "https://github.com/ivofortunov/ngx-touch-keyboard#readme",
+  "homepage": "https://github.com/datexnpm/ngx-touch-keyboard#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ivofortunov/ngx-touch-keyboard.git"
+    "url": "git+https://github.com/datexnpm/ngx-touch-keyboard.git"
   },
   "bugs": {
-    "url": "https://github.com/ivofortunov/ngx-touch-keyboard/issues"
+    "url": "https://github.com/datexnpm/ngx-touch-keyboard/issues"
   },
   "license": "MIT"
 }
