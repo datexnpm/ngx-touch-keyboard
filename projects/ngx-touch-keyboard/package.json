@@ -1,6 +1,6 @@
 {
-  "name": "dtx-touch-keyboard",
-  "version": "1.0.3",
+  "name": "datex-touch-keyboard",
+  "version": "1.0.0",
   "description": "Virtual Keyboard for Angular applications with number support",
   "peerDependencies": {
     "@angular/common": ">=14.0.0",
