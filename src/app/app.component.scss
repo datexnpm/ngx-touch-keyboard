@@ -1,0 +1,51 @@
+.mat-toolbar {
+  sup {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+
+  .mat-icon-button {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+}
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+
+  .mat-mdc-card {
+    margin-bottom: 2rem;
+  }
+}
+
+.native-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 0.25rem;
+
+  input,
+  textarea {
+    display: flex;
+    flex: 1 1 auto;
+    height: 32px;
+  }
+}
+
+.mat-mdc-form-field {
+  margin-top: 1rem !important;
+  width: 100%;
+}
+
+.mdc-dialog__title {
+  display: flex !important;
+  align-items: center !important;
+  padding: 9px 24px !important;
+
+  label {
+    display: flex;
+    flex: 1;
+  }
+}
