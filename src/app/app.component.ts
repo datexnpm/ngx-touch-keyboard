@@ -86,4 +86,8 @@ export class AppComponent {
     // Add class name for the currently selected scheme
     this._document.body.classList.add(scheme);
   }
+
+  myPanelClosed(){
+    
+  }
 }

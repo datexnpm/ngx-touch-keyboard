@@ -716,6 +716,7 @@ export class NgxTouchKeyboardComponent {
        * Close panel
        */
       this.closePanel.emit();
+      
     }
   }
 

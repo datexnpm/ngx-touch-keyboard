@@ -2,9 +2,11 @@ import {
   ComponentRef,
   Directive,
   ElementRef,
+  EventEmitter,
   Inject,
   Input,
   OnDestroy,
+  Output,
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { ComponentPortal } from '@angular/cdk/portal';
@@ -53,6 +55,9 @@ export class NgxTouchKeyboardDirective implements OnDestroy {
   set ngxTouchKeyboardFullScreen(value: any) {
     this._fullScreenMode = coerceBooleanProperty(value);
   }
+
+  @Output()
+  onPanelClosed = new EventEmitter();
 
   private _overlayRef!: OverlayRef;
   private _panelRef!: ComponentRef<NgxTouchKeyboardComponent>;
@@ -126,7 +131,10 @@ export class NgxTouchKeyboardDirective implements OnDestroy {
     this.isOpen = true;
 
     // Reference the input element
-    this._panelRef.instance.closePanel.subscribe(() => this.closePanel());
+    this._panelRef.instance.closePanel.subscribe(() => {
+      this.closePanel();
+      this.onPanelClosed.emit();
+    });
   }
 
   /**
