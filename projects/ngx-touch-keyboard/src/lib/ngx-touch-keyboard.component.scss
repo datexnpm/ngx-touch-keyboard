@@ -133,3 +133,21 @@ ngx-touch-keyboard {
     }
   }
 }
+
+.cdk-overlay-connected-position-bounding-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    left: 0 !important;
+
+    .ngx-touch-keyboard-overlay-pane {
+      width: 100% !important;
+      min-width: 100% !important;
+
+      ngx-touch-keyboard {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+      }
+    }
+}
+
