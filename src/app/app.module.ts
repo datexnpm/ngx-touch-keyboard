@@ -16,9 +16,10 @@ import { NgxTouchKeyboardModule } from 'ngx-touch-keyboard';
 
 import { AppComponent } from './app.component';
 import { MaterialDialogExampleComponent } from './material-dialog-example/material-dialog-example.component';
+import { NumericInputComponent } from './numeric-input/numeric-input.component';
 
 @NgModule({
-  declarations: [AppComponent, MaterialDialogExampleComponent],
+  declarations: [AppComponent, MaterialDialogExampleComponent, NumericInputComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

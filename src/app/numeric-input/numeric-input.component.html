@@ -1,0 +1,29 @@
+ <mat-form-field appearance="outline" class="numeric-wrapper">
+        <mat-label>Open with button: ngxNumericType</mat-label>
+        <input
+          matInput
+          type="text"
+           [value]="value"
+            (input)="onInput($event)"
+            (blur)="onBlur()"
+            (focus)="onFocus()"
+            inputmode="none"
+            ngxNumericType="true"
+          ngxTouchKeyboard
+          #materialTouchKeyboard="ngxTouchKeyboard"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          type="button"
+          (click)="materialTouchKeyboard.togglePanel()"
+        >
+          <mat-icon class="mat-icon-rtl-mirror"> keyboard </mat-icon>
+        </button>
+       
+         <div class="spinner" *ngIf="focused">
+            <button type="button" (mousedown)="increment($event)">▲</button>
+            <button type="button" (mousedown)="decrement($event)">▼</button>
+        </div>
+
+      </mat-form-field>

@@ -1,0 +1,29 @@
+.numeric-wrapper {
+  position: relative;
+  width: auto;
+  display: block;
+
+  .spinner {
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    bottom: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    button {
+      width: 16px;
+      height: 50%;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 10px;
+      color: rgba(0,0,0,0.54);
+
+      &:hover {
+        color: rgba(0,0,0,0.87);
+      }
+    }
+  }
+}

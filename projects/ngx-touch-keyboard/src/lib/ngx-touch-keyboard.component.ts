@@ -38,6 +38,7 @@ export class NgxTouchKeyboardComponent {
   private _caretPositionEnd: number | null = null;
   private _activeInputElement!: HTMLInputElement | HTMLTextAreaElement | null;
   private _dotPressed: boolean = false;
+  private _isNumericType: boolean = false;
   /**
    * Constructor
    */
@@ -141,14 +142,18 @@ export class NgxTouchKeyboardComponent {
    *
    * @param input Input native element
    */
-  setActiveInput(input: HTMLInputElement | HTMLTextAreaElement): void {
+  setActiveInput(input: HTMLInputElement | HTMLTextAreaElement, isNumeric =  false): void {
     this._activeInputElement = input;
 
     /**
      * Tracking keyboard layout
      */
+    this._isNumericType = isNumeric;
     const inputMode = this._activeInputElement?.inputMode;
-    if (
+
+     if(this._isNumericType){
+      this.layoutMode = 'decimal';
+    }else if  (
       inputMode &&
       ['text', 'search', 'email', 'url', 'numeric', 'decimal', 'tel'].some(
         (i) => i === inputMode
@@ -159,7 +164,9 @@ export class NgxTouchKeyboardComponent {
       this.layoutMode = 'text';
     }
 
-    if (
+     if(this._isNumericType){
+       this.layoutName = 'default';
+    } else if (
       inputMode &&
       ['numeric', 'decimal', 'tel'].some((i) => i === inputMode)
     ) {
@@ -311,6 +318,16 @@ export class NgxTouchKeyboardComponent {
         this.layoutName = button.substring(1, button.length - 1);
         return;
       }
+    }
+    else if(button==='.' && this._isNumericType){
+      if(!output.includes('.') && output.length!=0){
+        output = this._addStringAt(output, button, ...commonParams);
+      }     
+    }
+    else if(button==='0' && this._isNumericType && output.length===1){
+      if(!output.includes('0')){
+        output = this._addStringAt(output, button, ...commonParams);
+      }     
     }
     else if(button==='.' && this._activeInputElement?.type == 'number'){
        output = this._addStringAt(output, '.0', ...commonParams);

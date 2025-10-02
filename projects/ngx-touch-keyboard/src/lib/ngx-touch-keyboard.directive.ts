@@ -56,6 +56,16 @@ export class NgxTouchKeyboardDirective implements OnDestroy {
     this._fullScreenMode = coerceBooleanProperty(value);
   }
 
+  private _ngxNumericType:boolean = false;
+  /** numeric mode */
+  @Input()
+  get ngxNumericType(){
+    return this._ngxNumericType;
+  }  
+  set ngxNumericType(value: any){
+    this._ngxNumericType = coerceBooleanProperty(value);;
+  }
+
   @Output()
   onPanelClosed = new EventEmitter();
 
@@ -127,7 +137,7 @@ export class NgxTouchKeyboardDirective implements OnDestroy {
     );
     this._panelRef.instance.debug = this.ngxTouchKeyboardDebug;
     this._panelRef.instance.setLocale(this._locale);
-    this._panelRef.instance.setActiveInput(this._elementRef.nativeElement);
+    this._panelRef.instance.setActiveInput(this._elementRef.nativeElement, this._ngxNumericType);
     this.isOpen = true;
 
     // Reference the input element
